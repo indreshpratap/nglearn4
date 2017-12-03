@@ -1,3 +1,9 @@
+.msg {
+    padding:5px;
+    border:1px solid;
+    border-radius: 5px;
+}
+
 .green {
     background: green;
 }
@@ -8,4 +14,11 @@
 
 .red {
     background: red;
+}
+
+.bold {
+    font-weight: bold;
+}
+.italic {
+    font-style: italic;
 }
