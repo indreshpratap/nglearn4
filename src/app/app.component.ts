@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app works!';
+  message = '<b>Thank you for your subscription:)</b>';
+  news = "Trending news";
+  name="Indresh Singh";
+  msgcls  = "red";
+
+  changeColor(cls) {
+    this.msgcls = cls;
+  }
 }

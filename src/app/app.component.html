@@ -1,9 +1,18 @@
 <app-header></app-header>
 <div class="container">
-    <h1>
-        {{title}}
-      </h1>
-  <div class="notification">
-    This container is <strong>centered</strong> on desktop.
-  </div>
+  <h1 [class]="msgcls"> {{message}}</h1>
+    <div class="notification">
+      This container is
+      <strong>centered</strong> on desktop.
+    </div>
+
+    <div>{{news}}</div>
+
+    <input type="text" [value]="name" id="01" />
+
+    <button (click)="changeColor('red')">Red</button>
+    <button (click)="changeColor('green')">GREEN</button>
+    <button (click)="changeColor('yellow')">YELLOW</button>
 </div>
+
+<app-footer></app-footer>
