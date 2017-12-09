@@ -4,3 +4,20 @@
 body {
     /* background: green; */
 }
+
+.first {
+    font-weight: bold;
+}
+
+.last {
+    font-weight: bold;
+    background-color: lightgray;
+}
+.evenrow {
+    color:white;
+    background-color: blue;
+}
+.oddrow {
+color:yellow;
+background-color: tomato;
+}

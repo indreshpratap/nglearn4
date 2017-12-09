@@ -1,0 +1,36 @@
+<h2>Structural Examples</h2>
+
+<button (click)="toggleFlag()">Toogle Flag</button>
+<button (click)="changeId()">Generate New ID</button>
+<button (click)="processTemplate()">Process Template</button>
+
+<div *ngIf="flag">
+    This is controlled by ng If Flag value is {{flag}}
+    <ul [id]="generatedId">
+        <li>fdfs</li>
+        <li>dfdlsfjsklfjl fsdk </li>
+        <li>dfdlsfjsklfjl fsdk </li>
+        <li>dfdlsfjsklfjl fsdk </li>
+    </ul>
+</div>
+<div *ngIf="!flag">
+    This is else block
+</div>
+
+
+<div *ngIf="2*2===5">
+    Yes type === 1
+</div>
+<div *ngIf="type===2">
+    Yes type === 2
+</div>
+
+<div *ngFor="let color of colors;let i=index;let myfirst=first;let mylast = last;let odd=odd;let even=even;">
+    <!-- <span [class.first]="myfirst" [class.last]="mylast" [class.evenrow]="even" [class.oddrow]="odd"> Index:{{i}} -> {{color}} First: {{myfirst}} Last {{mylast}} Odd:{{odd}} Even:{{even}}</span> -->
+    <span [ngClass]="{first:myfirst,last:mylast,evenrow:even,oddrow:odd}"> Index:{{i}} -> {{color}} First: {{myfirst}} Last {{mylast}} Odd:{{odd}} Even:{{even}}</span>
+    <button (click)="removeItem(i)">X</button>
+</div>
+<pre>
+    {{myhtml}}
+
+</pre>
