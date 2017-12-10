@@ -30,6 +30,26 @@
     <span [ngClass]="{first:myfirst,last:mylast,evenrow:even,oddrow:odd}"> Index:{{i}} -> {{color}} First: {{myfirst}} Last {{mylast}} Odd:{{odd}} Even:{{even}}</span>
     <button (click)="removeItem(i)">X</button>
 </div>
+
+<div>
+    Current type value is: <b>{{type}}</b>
+
+    <div [ngSwitch]="type">
+        <div *ngSwitchCase="1" class="info">
+            <!-- This is info message; -->
+            <app-custom-message cls="info" [message]="msgs.info"></app-custom-message>
+        </div>
+        <div *ngSwitchCase="2" class="success">
+                <app-custom-message cls="success" [message]="msgs.success"></app-custom-message>
+        </div>
+        <div *ngSwitchCase="3" class="warning">
+                <app-custom-message cls="warning" [message]="msgs.warning"></app-custom-message>
+        </div>
+        <div *ngSwitchDefault>
+                <app-custom-message [message]="msgs.nomsg"></app-custom-message>
+        </div>
+    </div>
+</div>
 <pre>
     {{myhtml}}
 

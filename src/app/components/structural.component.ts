@@ -11,12 +11,21 @@ export class StructuralComponent {
     counter = 0;
     myhtml;
     generatedId: string = "";
-    type = 2;
+    type = 0;
 
     colors: Array<string>;
 
+    msgs:any;
+
     constructor() {
         // this.changeId();
+        this.msgs = {
+            "info":"This is info message",
+            "warning":"This is warning message",
+            "success" :"this is success message",
+            "nomsg":"No message defined!"
+
+        }
 
         this.colors = [
             "Red",
@@ -25,6 +34,7 @@ export class StructuralComponent {
             "White"
         ];
         this.autoPushColors();
+        this.autoSwithType();
     }
 
     toggleFlag() {
@@ -56,7 +66,16 @@ export class StructuralComponent {
     }
 
     removeItem(index) {
-        this.colors.splice(index,1);
+        this.colors.splice(index, 1);
+    }
+
+    autoSwithType() {
+        let interval = setInterval(() => {
+            ++this.type;
+            if (this.type > 4) {
+               this.type=0;
+            }
+        }, 3000);
     }
 
 }

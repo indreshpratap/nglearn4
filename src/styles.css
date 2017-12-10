@@ -21,3 +21,17 @@ body {
 color:yellow;
 background-color: tomato;
 }
+
+.info {
+    background-color: lightblue;
+    color:black;
+}
+.success {
+    background-color: green;
+    color:white;
+}
+.warning {
+    background-color: tomato;
+    color:white;
+
+}
