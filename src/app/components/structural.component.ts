@@ -78,4 +78,10 @@ export class StructuralComponent {
         }, 3000);
     }
 
+    receivedClosedRequest(data){
+        console.log("Received close request and data is: "+JSON.stringify(data));
+    }
+    warningCloseRequest(data) {
+        alert(JSON.stringify(data));
+    }
 }
