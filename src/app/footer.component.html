@@ -1,3 +1,15 @@
 <footer>
     Footer component
+    <div class="container">
+        this is footer container
+    </div>
+    <div *ngIf="flag">
+            Only sho when flag is true
+        </div>
+    <ul>
+        <li *ngFor="let link of links; let indx=index"> 
+            {{link.name}} {{indx}}
+            <button (click)="removeLink(indx)">X</button>
+        </li>
+    </ul>
 </footer>

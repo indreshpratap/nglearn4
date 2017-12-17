@@ -43,10 +43,10 @@
                 <app-custom-message msv="1003" cls="success" [message]="msgs.success"></app-custom-message>
         </div>
         <div *ngSwitchCase="3" class="warning">
-                <app-custom-message msv="1002" (sendRequest)="warningCloseRequest($event)" cls="warning" [message]="msgs.warning"></app-custom-message>
+                <app-custom-message msv="1002" (onClose)="warningCloseRequest($event)" cls="warning" [message]="msgs.warning"></app-custom-message>
         </div>
         <div *ngSwitchDefault>
-                <app-custom-message secureprop="secure data passed" msv="1001" (sendRequest)="receivedClosedRequest($event)" [message]="msgs.nomsg"></app-custom-message>
+                <app-custom-message secureprop="secure data passed" msv="1001" (onClose)="receivedClosedRequest($event)" [message]="msgs.nomsg"></app-custom-message>
         </div>
     </div>
 </div>

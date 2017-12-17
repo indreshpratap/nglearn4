@@ -1,12 +1,16 @@
-<!-- <app-header></app-header> -->
+<app-header></app-header>
 
 <!-- <app-propertyevent></app-propertyevent> -->
 
-<app-custom-message msv="1000" cls="info" message="Message from Home page">
+<app-custom-message *ngIf="message"
+ cls="success"
+(onLoaded)="onMsgLoaded($event)"
+(onClose)="closeit($event)"
+  cls="success" [message]="message">
 </app-custom-message>
 <hr>
 <input type="text" value="fsd">
-
+<button (click)="doSave()">Save My Form</button>
 <app-structural></app-structural>
 
-<!-- <app-footer></app-footer> -->
+<app-footer></app-footer>
