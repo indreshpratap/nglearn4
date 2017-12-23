@@ -1,19 +1,22 @@
-import { Component, Input, Output, EventEmitter, OnInit, OnDestroy } from "@angular/core";
+import { Component, Input, Output, EventEmitter, OnInit, OnDestroy, OnChanges, SimpleChanges, DoCheck, AfterViewInit } from "@angular/core";
 
 
 @Component({
     selector: "app-custom-message",
-    template: `<div class="message" [ngClass]="cls"> {{ message }} <button (click)="closeIt()">x</button> </div>`,
+    template: `<div class="message" [ngClass]="cls"> {{ message }} {{myspecialvariable.specialvalue}}<button (click)="closeIt()">x</button> </div>`,
     styles: ['.message { border:1px solid; padding:5px; border-radius:5px;}']
 })
-export class CustomMessageComponent implements OnInit, OnDestroy {
+export class CustomMessageComponent implements OnInit, OnDestroy, OnChanges,DoCheck,AfterViewInit {
+    
+    
+
 
     @Input()
     message: string;
     @Input()
     cls: string;
     @Input("msv")
-    myspecialvariable: number;
+    myspecialvariable: any;
     @Input()
     delay: number;
 
@@ -27,6 +30,7 @@ export class CustomMessageComponent implements OnInit, OnDestroy {
 
     constructor() {
         // this.message = "My Custom message";
+        console.log("Constructor called");
     }
 
     ngOnInit() {
@@ -42,6 +46,30 @@ export class CustomMessageComponent implements OnInit, OnDestroy {
                 this.closeIt();
             }, this.delay);
         }
+    }
+    ngAfterViewInit(): void {
+        console.log("After view init");
+    }
+    ngAfterViewChecked(): void {
+        console.log("After view Checked");
+    }
+
+    ngOnChanges(changes: SimpleChanges): void {
+        console.log("Ng On changes", changes);
+        let msgProp = changes.message;
+        if (msgProp) {
+            console.log("Yes we have received the message property value", msgProp.currentValue);
+        }
+        let ms = changes.myspecialvariable;
+        if (ms) {
+            console.log("Recieved an object");
+            this.myspecialvariable = Object.assign({}, ms.currentValue);
+        }
+    }
+
+    ngDoCheck() {
+        console.log("Do check is running");
+       
     }
 
     ngOnDestroy() {

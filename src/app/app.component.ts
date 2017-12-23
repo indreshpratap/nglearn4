@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
 
   message;
+  obj: any = { specialvalue: 1000 };
 
   ngOnInit() {
     this.message = "Your data saved successfully";
@@ -18,13 +19,16 @@ export class AppComponent {
     this.message = null;
   }
 
-  onMsgLoaded(data){
+  onMsgLoaded(data) {
     console.log("Received On loaded event");
     console.log(data);
   }
 
   doSave() {
     this.message = "Form submitted successfully:)";
+    this.obj.specialvalue = 2000;
+    // this.obj =Object.assign({},this.obj);
+    console.log("modified value" + this.obj.specialvalue);
   }
 
 

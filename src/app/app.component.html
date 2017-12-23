@@ -3,10 +3,9 @@
 <!-- <app-propertyevent></app-propertyevent> -->
 
 <app-custom-message *ngIf="message"
- cls="success"
 (onLoaded)="onMsgLoaded($event)"
 (onClose)="closeit($event)"
-  cls="success" [message]="message">
+  cls="success" [message]="message" [msv]="obj">
 </app-custom-message>
 <hr>
 <input type="text" value="fsd">

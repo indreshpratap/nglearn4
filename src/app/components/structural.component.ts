@@ -11,7 +11,7 @@ export class StructuralComponent {
     counter = 0;
     myhtml;
     generatedId: string = "";
-    type = 0;
+    type = 10;
 
     colors: Array<string>;
 
@@ -33,8 +33,8 @@ export class StructuralComponent {
             "Blue",
             "White"
         ];
-        this.autoPushColors();
-        this.autoSwithType();
+     //   this.autoPushColors();
+      //  this.autoSwithType();
     }
 
     toggleFlag() {
