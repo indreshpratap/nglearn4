@@ -9,6 +9,8 @@ import { FooterComponent } from 'app/footer.component';
 import { StructuralComponent } from 'app/components/structural.component';
 import { PropertyEventsComponent } from 'app/components/propertyevents.component';
 import { CustomMessageComponent } from 'app/components/custom-message.component';
+import { ProductDetailsComponent } from 'app/components/product-details.component';
+import { ProductsComponent } from 'app/products/products.component';
 
 
 @NgModule({
@@ -18,7 +20,9 @@ import { CustomMessageComponent } from 'app/components/custom-message.component'
     FooterComponent,
     PropertyEventsComponent,
     StructuralComponent,
-    CustomMessageComponent
+    CustomMessageComponent,
+    ProductDetailsComponent,
+    ProductsComponent
   ],
   imports: [
     BrowserModule,

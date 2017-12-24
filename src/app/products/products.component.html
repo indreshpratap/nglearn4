@@ -1,0 +1,18 @@
+<div class="flex">
+  <div>
+      <table>
+          <tbody>
+            <tr *ngFor="let prod of products">
+              <td>{{prod.userId}}</td>
+              <td>{{prod.id}}</td>
+              <td>{{prod.title}}</td>
+              <td><button (click)="viewDetails(prod.id)">Details</button></td>
+            </tr>
+          </tbody>
+        </table>
+  </div>
+  <div>
+   <h2>Product Details</h2>
+   <app-product-details *ngIf="selectedProductId" [id]="selectedProductId" ></app-product-details>
+    </div>
+</div>
