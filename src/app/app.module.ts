@@ -11,6 +11,7 @@ import { PropertyEventsComponent } from 'app/components/propertyevents.component
 import { CustomMessageComponent } from 'app/components/custom-message.component';
 import { ProductDetailsComponent } from 'app/components/product-details.component';
 import { ProductsComponent } from 'app/products/products.component';
+import { ToolBarComponent } from 'app/contents/toolbar.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { ProductsComponent } from 'app/products/products.component';
     StructuralComponent,
     CustomMessageComponent,
     ProductDetailsComponent,
-    ProductsComponent
+    ProductsComponent,
+    ToolBarComponent
   ],
   imports: [
     BrowserModule,
